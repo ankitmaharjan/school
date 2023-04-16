@@ -1,0 +1,10 @@
+hash login salt encrypted
+folder structure
+created at timestamp
+soft_delete
+validation trim 
+
+mi5yyy!dd33!@
+
+UUId super key
+object lai array jasari use garera crud garne

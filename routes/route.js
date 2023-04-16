@@ -13,7 +13,7 @@
     router.get('/read-single/:id',search_data);
     router.delete('/delete-record/:id',delete_data);
     router.put('/update-record/:id',update_record);
-    router.post('/login',login_teacher)
+    router.post('/login',login_teacher.loginUser)
 
 
     module.exports = router;
