@@ -1,19 +1,21 @@
 
 ((validationHelper)=>{
     let pattern = /@gmail.com/;
-    validationHelper.uservalidation = async(username,email,password,phone) =>{
-        if (username == "" || password == "" || email == "" || phone == "") {
-           console.log("Data can't be empty");;
+    //validationHelper.uservalidation = async(username,email,password,phone) =>{
+        validationHelper.uservalidation = async(requestObject) =>{
+        if (requestObject.username == "" || requestObject.password == "" || requestObject.email == "" || requestObject.phone == "") {
+          return false
         }
        
-        else if (password.length <= 8) {
-            console.log("Password length must be correct");
+        else if (requestObject.password.length <= 8) {
+            return false
+
         }
-        else if (pattern.test(email) == false) {
-            console.log("Put valid email");
+        else if (pattern.test(requestObject.email) == false) {
+            return false
         }
-        else if(phone.length <= 9 ){
-            console.log("Phone number should be correct");
+        else if(requestObject.phone.length <= 9 ){
+            return false
         }
         else{
             return true;

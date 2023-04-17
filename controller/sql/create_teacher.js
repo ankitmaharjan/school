@@ -1,10 +1,12 @@
-const mysqlHelper = require("../../common/mysqlHelper");
+const helper = require("../../common/index");
 (()=>{
-    module.exports=async(username,email,password,phone)=>{
+    // module.exports=async(username,email,password,phone)=>{
+        module.exports=async(call)=>{
        let myDate = new Date().getTime(); //epoch value
-       let query = "INSERT INTO teachers (username,email,password,phone,created_at) VALUES ('"+username+"','"+email+"','"+password+"','"+phone+"','"+myDate+"')";
-       //let query = "INSERT INTO teachers (createdAt,updatedAt) VALUES ('"+myDate.toGMTString()+"','"+myDate.toGMTString()+"')";
-       const output=await mysqlHelper.query(query);
+       const { v4: uuidv4 } = require('uuid'); //super key
+       //let query = "INSERT INTO teachers (username,email,password,phone,created_at) VALUES ('"+username+"','"+email+"','"+password+"','"+phone+"','"+myDate+"')";
+       const output = await helper.mysqlHelper.query(`INSERT INTO teachers (uuid,username,email,password,phone,created_at) VALUES ('${uuidv4()}','${call.username }','${call.email}','${call.password}','${call.phone}',${myDate})`)
+       //const output=await mysqlHelper.query(query);
         console.log(output[0].affectedRows>0)
         if(output[0].affectedRows>0){
             return true

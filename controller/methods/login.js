@@ -1,4 +1,5 @@
-// const helper = require("../../common/index")
+const helper = require("../../controller/helper/index")
+const teacher = require('../../db/models');
 //   //POST LOGIN
 // const loginController = async (req, res) => {
 //   try {
@@ -44,9 +45,9 @@
 
 
 
-const helper = require('../../common/index')
-const db = require('../../db/models')
-let teachers = helper.my;
+// const helper = require('../../common/index')
+// const db = require('../../db/models')
+// let teachers = helper.my;
 //login validation
 const loginUser = async(req,res,next)=>{
         let username = req.body.username;
@@ -54,7 +55,7 @@ const loginUser = async(req,res,next)=>{
         
         const output = await helper.cacheHelper.saveCache("isLogin",true,100000);
         console.log(output);
-        let data = await teachers.findOne({where:{username:username,password:password}});
+        let data = await teacher.findOne({where:{username:username,password:password}});
         if(output){   
             res.send({
                 message:"Successfully Login, Welcome to Login Page"

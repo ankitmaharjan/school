@@ -1,10 +1,14 @@
-hash login salt encrypted
-folder structure
-created at timestamp
-soft_delete
-validation trim 
+hash login salt encrypted  bycrypt
+folder structure  done
+created at timestamp   done
+soft_delete   done
+validation trim not needed
+reference templete   meaning   ` `  '${call.email}'    /   \   done
 
-mi5yyy!dd33!@
+??? yeskoi concept ni bujnu xaaa
 
-UUId super key
-object lai array jasari use garera crud garne
+UUId super key  done
+object lai array jasari use garera crud garne     bujnu xaaa
+
+is_delete = 0 xa bhe chai delete bhako xaina  soft deleted wala  flag ko concept    done
+is_delete = 1 xa bhe chai delete bhako ho    done
