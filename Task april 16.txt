@@ -12,3 +12,15 @@ object lai array jasari use garera crud garne     bujnu xaaa
 
 is_delete = 0 xa bhe chai delete bhako xaina  soft deleted wala  flag ko concept    done
 is_delete = 1 xa bhe chai delete bhako ho    done
+
+
+format milaune, all these below it like exeption handling, status code all
+sql query format done  
+time complexity for backend nodejs   dai le video send garxa
+"uuid": "^9.0.0" format meaining cap  donee
+status code, exception handling try catch
+GRPC google remote Procedure call   done
+encode decode base 64 convert to string done
+use strict  done
+
+same database merge main branch

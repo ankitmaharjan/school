@@ -1,5 +1,7 @@
+"use strict";
 (()=>{
     module.exports=async(call)=>{
+      try {
         const helper = require("../../common/index")
         let myDate = new Date().getTime();
         //const output=await helper.mysqlHelper.query("Select * from students where id="+search);
@@ -10,6 +12,10 @@
                {
                  return true
                 
-               }
+               } 
+      } catch (error) {
+        console.log(error);
+      }
+       
     }
 })()

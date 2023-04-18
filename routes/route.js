@@ -1,3 +1,4 @@
+"use strict";
 (() => {
     const express = require("express");
     const router = express.Router();
@@ -7,7 +8,7 @@
     const search_data = require("../controller/methods/read_singleRecord");
     const update_record = require("../controller/methods/update_record");
     const select_data = require("../controller/methods/read_data");
-    const login_teacher = require("../controller/methods/login");
+    const loginController = require("../controller/methods/login");
     
     router.post('/sign-up',create_teacher);
     router.get('/get-all-record',read_data);
@@ -16,7 +17,7 @@
     //router.delete('/delete-record/:id',delete_data);
     router.put('/delete-record/:uuid',delete_data);
     router.put('/update-record/:uuid',update_record);
-    router.post('/login',login_teacher.loginUser)
+    router.post('/login',loginController);
 
 
     module.exports = router;

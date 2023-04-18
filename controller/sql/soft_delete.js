@@ -1,5 +1,7 @@
+"use strict";
 (()=>{
     module.exports=async(req, res, next)=>{
+      try {
         const helper = require("../../common/index")
         let uuid = req.uuid;
         //const output=await helper.mysqlHelper.query("Select * from students where id="+search);
@@ -9,6 +11,10 @@
                {
                  return true
                 
-               }
+               } 
+      } catch (error) {
+        console.log(error);
+      }
+       
     }
 })()

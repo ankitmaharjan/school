@@ -1,16 +1,24 @@
-'user strict';
+'use strict';
 
-((hashOperator)=>{
-    const bcrypt = require('bcrypt');
+const bcrypt = require("bcrypt"); 
 
-    hashOperator.computeHash  = (sourcePassword, salt)=>{
-        return bcrypt.hash(sourcePassword,salt);
-    };
+const hashpassword = async(password) =>{
+    try{
+        const salt = 10; //CPU USAGES INCREASES AS VALUE INCREASES, A salt is a random string that makes the hash unpredictable
+        const hashpassword = await bcrypt.hash(password, salt);
+        return hashpassword;
+    }catch(error){
+        console.log(error)
+    }
+}
 
-    hashOperator.createSalt = ()=>{
-        return bcrypt.genSalt(8);
-    };
-    hashOperator.comparePassword = async(inputPwd,hash)=>{
-        return bcrypt.compare(inputPwd,hash);
-    }   
-})(module.exports)
+const comparePassword = async(password,hashpassword) =>{
+    try {
+        return bcrypt.compare(password, hashpassword);     
+    } catch (error) {
+        console.log(error)
+    }
+   
+}
+
+module.exports = {hashpassword, comparePassword};
